@@ -1,5 +1,5 @@
 # The Script Sandbox
-This repository contains a collection of python scripts and ideas I routinely experiment with.
+This repository contains a collection of python scripts, sql statements, code snippets and ideas I routinely experiment with.
 
 ### Favourite scripts:
 - [pdf_crawler.py](script-sandbox/pdf_crawler.py) - web crawler for pdf files
