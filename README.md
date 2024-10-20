@@ -2,7 +2,7 @@
 This repository contains a collection of python scripts, sql statements, code snippets and ideas I routinely experiment with.
 
 ### Favourite scripts:
-- (`HL7_parser.py`](script-sandbox/HL7_parser.py) - breaks down HL7 messages
+- [`HL7_parser.py`](script-sandbox/HL7_parser.py) - breaks down HL7 messages
 - [`pdf_crawler.py`](script-sandbox/pdf_crawler.py) - web crawler for pdf files
 - [`csv_txt_crawler.py`](script-sandbox/csv_txt_crawler.py) - web crawler for csv and txt files
 - [`columns_to_rows.py`](script-sandbox/columns_to_rows.py) - transposes the columns (csv) to rows, except the first column which contains the header
