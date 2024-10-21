@@ -1,6 +1,28 @@
 import tkinter as tk
 from tkinter import scrolledtext, messagebox
 
+# Comprehensive HL7 segment dictionary
+hl7_segments = {
+    'MSH': 'Message Header',
+    'EVN': 'Event Type',
+    'PID': 'Patient Identification',
+    'PD1': 'Patient Additional Demographic',
+    'NK1': 'Next of Kin / Associated Parties',
+    'PV1': 'Patient Visit',
+    'PV2': 'Patient Visit - Additional Information',
+    'OBR': 'Observation Request',
+    'OBX': 'Observation/Result',
+    'AL1': 'Allergy Information',
+    'DG1': 'Diagnosis',
+    'PR1': 'Procedures',
+    'GT1': 'Guarantor Information',
+    'IN1': 'Insurance Information',
+    'IN2': 'Insurance Additional Information',
+    'IN3': 'Insurance Additional Information, Certification',
+    'ROL': 'Role',
+    # Add more segments as needed
+}
+
 def parse_hl7_message(hl7_message):
     try:
         # Split the message into segments
@@ -10,7 +32,8 @@ def parse_hl7_message(hl7_message):
         for segment in segments:
             fields = segment.split('|')
             segment_name = fields[0]
-            output.append(f"Segment: {segment_name}")
+            segment_description = hl7_segments.get(segment_name, "Unknown Segment")
+            output.append(f"Segment: {segment_name} ({segment_description})")
             
             # Enumerate fields starting from 1 for each segment
             for index, field in enumerate(fields[1:], start=1):
