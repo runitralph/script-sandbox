@@ -2,7 +2,7 @@
 This repository contains a collection of python scripts, sql statements, code snippets and ideas I routinely experiment with.
 
 ### Favourite scripts:
-- [`hl7_reader.py`](hl7_reader.py) - reads HL7 messages
+- [`hl7_reader.py`](hl7_reader.py) - parses HL7 messages
 - [`pdf_crawler.py`](pdf_crawler.py) - web crawler for pdf files
 - [`csv_txt_crawler.py`](csv_txt_crawler.py) - web crawler for csv and txt files
 - [`columns_to_rows.py`](columns_to_rows.py) - transposes the columns (csv) to rows, except the first column which contains the header
