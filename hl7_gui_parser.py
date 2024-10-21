@@ -12,6 +12,7 @@ hl7_segments = {
     'PV2': 'Patient Visit - Additional Information',
     'OBR': 'Observation Request',
     'OBX': 'Observation/Result',
+    'ORC': 'Common Order',
     'AL1': 'Allergy Information',
     'DG1': 'Diagnosis',
     'PR1': 'Procedures',
@@ -20,7 +21,6 @@ hl7_segments = {
     'IN2': 'Insurance Additional Information',
     'IN3': 'Insurance Additional Information, Certification',
     'ROL': 'Role',
-    # Add more segments as needed
 }
 
 def parse_hl7_message(hl7_message):
@@ -58,7 +58,7 @@ def on_parse():
 
 # Set up the main application window
 root = tk.Tk()
-root.title("HL7 Message Parser")
+root.title("Raphael's HL7 Reader")
 
 # Create a text area for input
 text_input = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=60, height=10)
