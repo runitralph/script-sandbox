@@ -1,18 +1,21 @@
 import tkinter as tk
 from tkinter import scrolledtext, messagebox
-import hl7
 
 def parse_hl7_message(hl7_message):
     try:
-        # Parse the HL7 message using hl7apy
-        parsed_message = hl7.parse(hl7_message)
+        # Split the message into segments
+        segments = hl7_message.strip().split('\n')
         
         output = []
-        for segment in parsed_message:
-            segment_name = segment[0]
+        for segment in segments:
+            fields = segment.split('|')
+            segment_name = fields[0]
             output.append(f"Segment: {segment_name}")
-            for index, field in enumerate(segment[1:], start=1):
+            
+            # Enumerate fields starting from 1 for each segment
+            for index, field in enumerate(fields[1:], start=1):
                 output.append(f"  Field {index}: {field}")
+                
             output.append("")  # Add a newline for better readability between segments
         
         return "\n".join(output)
