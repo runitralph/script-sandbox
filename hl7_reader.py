@@ -6,14 +6,13 @@ def parse_hl7_message(message):
     
     for segment in parsed_message:
         segment_name = segment[0]
-        print(f"Segment: {segment_name}")
+        print(f"\nSegment: {segment_name}")
+        print("=" * (len(segment_name) + 9))
         for i, field in enumerate(segment[1:], start=1):
             print(f"  Field {i}: {field}")
 
-def main():
-    # Prompt user for HL7 message input
-    hl7_message = input("Paste the HL7 message: ")
-    parse_hl7_message(hl7_message)
+# Read HL7 message from hl7.txt file
+with open('hl7.txt', 'r') as file:
+    hl7_message = file.read()
 
-if __name__ == "__main__":
-    main()
+parse_hl7_message(hl7_message)
