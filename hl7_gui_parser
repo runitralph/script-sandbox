@@ -66,7 +66,7 @@ root = tk.Tk()
 root.title("Raphael's HL7 Reader")
 
 # Text area for input
-text_input = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=60, height=16)
+text_input = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=80, height=16)
 text_input.grid(column=0, row=0, padx=10, pady=10)
 
 # Button for parsing
@@ -74,7 +74,7 @@ parse_button = tk.Button(root, text="Parse HL7 Message", command=on_parse)
 parse_button.grid(column=0, row=1, padx=10, pady=10)
 
 # Text area for output
-text_output = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=60, height=32)
+text_output = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=80, height=32)
 text_output.grid(column=0, row=2, padx=10, pady=10)
 
 # Start the Tkinter event loop
