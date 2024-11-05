@@ -8,8 +8,8 @@ def convert_tsv_to_csv():
     # Split the input into lines and then process each line
     csv_data = []
     for line in tsv_data.splitlines():
-        # Split by tab and join by semicolon, preserving semicolons in the data
-        csv_line = ";".join(line.split("\t"))
+        # Split by tab, wrap each field in double quotes, and join by semicolon
+        csv_line = ";".join([f'"{field}"' for field in line.split("\t")])
         csv_data.append(csv_line)
     
     # Set the output CSV data in the output text widget
@@ -18,15 +18,15 @@ def convert_tsv_to_csv():
 
 # Create the main window
 root = tk.Tk()
-root.title("Raphael's TSV to CSV Converter")
+root.title("TSV to CSV Converter")
 root.geometry("600x400")
 
 # Create a label for the input area
-input_label = tk.Label(root, text="Paste TSV data below:")
+input_label = tk.Label(root, text="Paste your TSV data below:")
 input_label.pack(pady=5)
 
 # Create a scrolled text widget for TSV input
-tsv_input = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=100, height=10)
+tsv_input = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=70, height=10)
 tsv_input.pack(pady=5)
 
 # Create a button to trigger the conversion
@@ -38,7 +38,7 @@ output_label = tk.Label(root, text="Converted CSV data:")
 output_label.pack(pady=5)
 
 # Create a scrolled text widget for CSV output
-csv_output = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=100, height=10)
+csv_output = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=70, height=10)
 csv_output.pack(pady=5)
 
 # Start the Tkinter event loop
